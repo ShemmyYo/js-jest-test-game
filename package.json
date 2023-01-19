@@ -1,0 +1,22 @@
+{
+  "name": "js-jest-test-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShemmyYo/js-jest-test-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShemmyYo/js-jest-test-game/issues"
+  },
+  "homepage": "https://github.com/ShemmyYo/js-jest-test-game#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
