@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { game, newGame, showScore } = require("../game");
+const { game, newGame, showScore, addTurn } = require("../game");
 
 beforeAll(() => {
     let fs = require("fs");
@@ -22,8 +22,8 @@ describe("game object contains correct keys", () => {
     test("currentGame key exist", () => {
         expect("currentGame" in game).toBe(true);
     });
-    test("playeMoves key exist", () => {
-        expect("playeMoves" in game).toBe(true);
+    test("playerMoves key exist", () => {
+        expect("playerMoves" in game).toBe(true);
     });
     test("choices key exist", () => {
         expect("choices" in game).toBe(true);
@@ -41,13 +41,14 @@ describe("newGame works correctly", () => {
         game.playerMoves = ["button1", "button2"];
         document.getElementById("score").innerText = "42";
         newGame();
+        
     });
     test("should set game score to 0", () => {
         expect(game.score).toEqual(0);
     });
-    test("should set current game to 0", () => {
-        expect(game.currentGame.length).toBe(0);
-    });
+    test("should be one element in the computer's array", () => {
+        expect(game.currentGame.length).toBe(1);
+    })
     test("should set player moves to 0", () => {
         expect(game.playerMoves.length).toBe(0);
     });
